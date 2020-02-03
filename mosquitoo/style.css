@@ -19,6 +19,7 @@ body {
   );
   background-size: 60px 60px;
 }
+
 .buttons-banner {
   display         : flex;
   justify-content : space-evenly;

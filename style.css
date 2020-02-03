@@ -1,0 +1,43 @@
+* {
+  margin    : 0;
+  padding   : 0;
+  box-sizing: border-box;
+}
+
+body {
+  position        : relative;
+  background-color: cornflowerblue;
+  background-image: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.15) 25%,
+    rgba(0, 0, 0, 0) 25%,
+    rgba(0, 0, 0, 0) 50%,
+    rgba(255, 255, 255, 0.15) 50%,
+    rgba(255, 255, 255, 0.15) 75%,
+    rgba(0, 0, 0, 0) 75%,
+    rgba(0, 0, 0, 0)
+  );
+  background-size: 60px 60px;
+  font-family: monospace;
+  font-size: 20px;
+}
+
+.links {
+  display: flex;
+  margin: 1rem 0;
+}
+
+.links a {
+  text-decoration: none;
+  font-variant: small-caps;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+  padding: 0.8rem;
+  margin: 1rem;
+  font-size: 3em;
+}
+
+.links a:hover {
+  text-decoration: none;
+  background-color: rgb(41, 223, 230);
+}
