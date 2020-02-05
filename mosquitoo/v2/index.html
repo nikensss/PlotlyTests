@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+		<!-- jQuery -->
+		<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+		<!-- Bootstrap -->
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+		<!-- Plotly -->
+		<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+		<script src="data.js"></script>
+		<script src="dataFilter.js"></script>
+		<script src="plotter.js"></script>
+		<script src="index.js"></script>
+		<link rel="stylesheet" href="style.css"></script>
+	<title>Plotly 3D plots</title>
+</head>
+<body>
+	<div class="buttons-banner">
+		<div class="dropdown">
+			<button class="btn btn-warning dropdown-toggle" type="button" data-toggle="dropdown">Current percentage</button>
+			<div class="dropdown-menu">
+				<button class="dropwdown-item dropdown-button" type="button" data-setting="currentPercentage">Current percentage</button>
+				<button class="dropwdown-item dropdown-button" type="button" data-setting="pulseWidth">Pulse width</button>
+				<button class="dropwdown-item dropdown-button" type="button" data-setting="stepperPosition">Stepper position</button>
+			</div>
+		</div>
+		<div class="buttons-banner-settings">
+			<button class="btn btn-previous btn-primary">
+				<div class="arrow-left"></div>
+			</button>
+			<button class="btn btn-primary btn-target btn-success" data-target="target60" data-target-previous="" data-target-next="61" data-target-int="60">60</button>
+			<button class="btn btn-primary btn-target" data-target="target61" data-target-previous="60" data-target-next="62" data-target-int="61">61</button>
+			<button class="btn btn-primary btn-target" data-target="target62" data-target-previous="61" data-target-next="63" data-target-int="62">62</button>
+			<button class="btn btn-primary btn-target" data-target="target63" data-target-previous="62" data-target-next="64" data-target-int="63">63</button>
+			<button class="btn btn-primary btn-target" data-target="target64" data-target-previous="63" data-target-next="65" data-target-int="64">64</button>
+			<button class="btn btn-primary btn-target" data-target="target65" data-target-previous="64" data-target-next="66" data-target-int="65">65</button>
+			<button class="btn btn-primary btn-target" data-target="target66" data-target-previous="65" data-target-next="67" data-target-int="66">66</button>
+			<button class="btn btn-primary btn-target" data-target="target67" data-target-previous="66" data-target-next="68" data-target-int="67">67</button>
+			<button class="btn btn-primary btn-target" data-target="target68" data-target-previous="67" data-target-next="69" data-target-int="68">68</button>
+			<button class="btn btn-primary btn-target" data-target="target69" data-target-previous="68" data-target-next="70" data-target-int="69">69</button>
+			<button class="btn btn-primary btn-target" data-target="target70" data-target-previous="69" data-target-next="71" data-target-int="70">70</button>
+			<button class="btn btn-primary btn-target" data-target="target71" data-target-previous="70" data-target-next="72" data-target-int="71">71</button>
+			<button class="btn btn-primary btn-target" data-target="target72" data-target-previous="71" data-target-next="73" data-target-int="72">72</button>
+			<button class="btn btn-primary btn-target" data-target="target73" data-target-previous="72" data-target-next="74" data-target-int="73">73</button>
+			<button class="btn btn-primary btn-target" data-target="target74" data-target-previous="73" data-target-next="75" data-target-int="74">74</button>
+			<button class="btn btn-primary btn-target" data-target="target75" data-target-previous="74" data-target-next="76" data-target-int="75">75</button>
+			<button class="btn btn-primary btn-target" data-target="target76" data-target-previous="75" data-target-next="77" data-target-int="76">76</button>
+			<button class="btn btn-primary btn-target" data-target="target77" data-target-previous="76" data-target-next="78" data-target-int="77">77</button>
+			<button class="btn btn-primary btn-target" data-target="target78" data-target-previous="77" data-target-next="79" data-target-int="78">78</button>
+			<button class="btn btn-primary btn-target" data-target="target79" data-target-previous="78" data-target-next="80" data-target-int="79">79</button>
+			<button class="btn btn-primary btn-target" data-target="target80" data-target-previous="79" data-target-next="81" data-target-int="80">80</button>
+			<button class="btn btn-primary btn-target" data-target="target81" data-target-previous="80" data-target-next="82" data-target-int="81">81</button>
+			<button class="btn btn-primary btn-target" data-target="target82" data-target-previous="81" data-target-next="83" data-target-int="82">82</button>
+			<button class="btn btn-primary btn-target" data-target="target83" data-target-previous="82" data-target-next="84" data-target-int="83">83</button>
+			<button class="btn btn-primary btn-target" data-target="target84" data-target-previous="83" data-target-next="85" data-target-int="84">84</button>
+			<button class="btn btn-primary btn-target" data-target="target85" data-target-previous="84" data-target-next="86" data-target-int="85">85</button>
+			<button class="btn btn-primary btn-target" data-target="target86" data-target-previous="85" data-target-next="87" data-target-int="86">86</button>
+			<button class="btn btn-primary btn-target" data-target="target87" data-target-previous="86" data-target-next="88" data-target-int="87">87</button>
+			<button class="btn btn-primary btn-target" data-target="target88" data-target-previous="87" data-target-next="89" data-target-int="88">88</button>
+			<button class="btn btn-primary btn-target" data-target="target89" data-target-previous="88" data-target-next="90" data-target-int="89">89</button>
+			<button class="btn btn-primary btn-target" data-target="target90" data-target-previous="89" data-target-next="" data-target-int="90">90</button>
+			<button class="btn btn-next btn-primary">
+				<div class="arrow-right"></div>
+			</button>
+		</div>
+	</div>
+	<div class="content-wrapper">
+		<div class="target-element content">
+			<div class="content-half right">
+				<div class="plot" id="plot-amplitude"></div>
+			</div>
+			<div class="content-half left">
+				<div class="plot" id="plot-pw"></div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
