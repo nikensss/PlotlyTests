@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<!-- jQuery -->
+		<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+						integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+		<!-- Bootstrap -->
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+					integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css"
+					integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+						integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
+						crossorigin="anonymous"></script>
+		<!-- Plotly -->
+		<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+		<script src="data.js"></script>
+		<script src="dataFilter.js"></script>
+		<script src="axis.js"></script>
+		<script src="inputs.js"></script>
+		<script src="output.js"></script>
+		<script src="outputs.js"></script>
+		<script src="plotter.js"></script>
+		<script src="index.js"></script>
+		<link rel="stylesheet" href="style.css"></script>
+		<title>Plotly 3D plots</title>
+	</head>
+	<body>
+		<div class="buttons-banner">
+			<div class="dropdown">
+				<button class="btn btn-warning dropdown-toggle" type="button" data-toggle="dropdown"></button>
+				<div class="dropdown-menu">
+				</div>
+			</div>
+			<button class="btn btn-previous btn-primary"><div class="arrow-left"></div></button>
+			<div class="buttons-banner-settings">
+			</div>
+			<button class="btn btn-next btn-primary"><div class="arrow-right"></div></button>
+		</div>
+		<div class="content-wrapper">
+			<div class="plot-wrapper">
+				<div class="methods" data-for="measuredEnergy">
+					<button class="btn btn-method btn-secondary" data-method="max">Max</button>
+					<button class="btn btn-method btn-secondary btn-success" data-method="average">Average</button>
+					<button class="btn btn-method btn-secondary" data-method="min">Min</button>
+				</div>
+				<div class="plot" id="measuredEnergy" data-name="measuredEnergy"></div>
+			</div>
+		</div>
+	</body>
+</html>
