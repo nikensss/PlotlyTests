@@ -1,4 +1,22 @@
 window.onload = function() {
+  /*
+   * (preferencia personal) No magrada massa assignar una funció a una propietat de window
+   * quan és un event. És més invulnerable la programació declarativa (vs imperativa). Això
+   * es un principi ja de la programació en general.
+   *
+   * podries fer algo com:
+   * window.addEventListener('load', function() {
+   *   ...
+   * });
+   */
+
+  /*
+   * Tot aixo que fas aqui es un callback que sexecutara
+   * quan salti l'event onload... que pot ser questio de milisegons, pero
+   * si estas declarant unes funcions de prototype, les pots posar a fora del callback
+   * perque sexecutin immediatament!
+   */
+
   Array.prototype.last = function() {
     return this[this.length - 1];
   };
@@ -17,6 +35,32 @@ window.onload = function() {
       this.filter(n => !isNaN(n) && isFinite(n))
     )
   };
+
+
+  /*
+   * - Que passa si Inputs no existeix per motiu X?
+   * - Com se jo què és Inputs?
+   * Aqui entra el meravellos mon de Import, Export, i mòduls de javascript
+   */
+
+
+  /*
+    import Inputs from './inputs';
+
+    const inputs = new Inputs(data.inputs);
+   */
+
+
+  /*
+   * Daquesta forma tens el control de quiens variables existeixen, sense que el
+   * html tingui que tenir cap mena de llogica (ara, es obligatori que es carregui primer
+   * el fitxer inputs perque aixo funcioni)
+   *
+   * Avoid global state!
+   *
+   * el mateix amb data, outputs,
+   */
+
   const inputs = new Inputs(data.inputs);
   const outputs = new Outputs(data.outputs, data.results);
   const layout = {
@@ -65,6 +109,9 @@ window.onload = function() {
     );
   }
 
+  /* aqui si que li fots canya als callbacks :-)
+   perque jquery tobliga jeje
+   */
   function btnTargetClick() {
     //highlight in green the currently selected button
     $('.btn-target.btn-success').removeClass('btn-success');
@@ -73,6 +120,8 @@ window.onload = function() {
       .addClass('btn-success')
       .trigger('active')
       .trigger('focus');
+    // ^ aaaara si :)
+
     inputs.fixInput({
       name: inputs.fixedInput.name,
       value: $(this).attr('data-target-int')
@@ -127,6 +176,15 @@ window.onload = function() {
           '</button>'
       )
     );
+
+    /* o.... */
+
+    $('.dropdown-menu')
+      .append('<button></button>')
+      .addClass('dropdown-item dropdown-button')
+      .attr('type', 'button') // innecessari realment
+      .data('setting', o)
+      .html(o);
   });
   //When clicking one of the dropdown options
   $('.dropdown-button').click(function() {
