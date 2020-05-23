@@ -1,3 +1,5 @@
-window.onload = function(){
+$(document).ready(() => {
+  console.log('Ready!');
+});
 
-}
+// A = 100 -
