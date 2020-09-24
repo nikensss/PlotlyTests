@@ -1,0 +1,32 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: brown;
+}
+
+.grid {
+  display: grid;
+  height: 100vh;
+}
+
+.year,
+.ticker {
+  justify-self: stretch;
+  align-self: stretch;
+  background-color: dodgerblue;
+  min-width: 80px;
+}
+
+.corner {
+  background-color: dodgerblue;
+}
+
+.available {
+  background-color: green;
+}
+
+p {
+  font-family: 'Montserrat', sans-serif;
+}
