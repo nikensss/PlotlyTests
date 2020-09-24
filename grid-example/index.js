@@ -1,69 +1,10 @@
 $(document).ready(function () {
   console.log(data);
 
-  // const relevantTradingSymbols = [
-  //   ...new Set(data.map(e => e.TradingSymbol))
-  // ].sort((a, z) => (a <= z ? -1 : 1));
-
-  const relevantTradingSymbols = [
-    'AAPL',
-    'ABBV',
-    'ACN',
-    'ADBE',
-    'AMD',
-    'AMGN',
-    'AMZN',
-    'AXP',
-    'BA',
-    'BAC',
-    'BIIB',
-    'BRK.B',
-    'CAT',
-    'COST',
-    'CRM',
-    'CVX',
-    'DE',
-    'DIS',
-    'FB',
-    'GD',
-    'GE',
-    'GILD',
-    'GM',
-    'GOOG',
-    'HD',
-    'IBM',
-    'INTC',
-    'INTU',
-    'JNJ',
-    'JPM',
-    'KO',
-    'LMT',
-    'LOW',
-    'LYFT',
-    'MA',
-    'MO',
-    'MRK',
-    'MSFT',
-    'NFLX',
-    'NKE',
-    'NVDA',
-    'ORCL',
-    'PEP',
-    'PFE',
-    'PG',
-    'PM',
-    'PYPL',
-    'RTN',
-    'SNAP',
-    'TSLA',
-    'TWTR',
-    'TXN',
-    'UTX',
-    'V',
-    'WFC',
-    'WMT',
-    'XOM'
-  ];
+  let s = `$GOOG $GOOG  $FB $TWTR $MSFT $ORCL $ADBE $CRM $INTU $INTC $TXN $AMZN $WMT $COST $NVDA $IBM $ACN $JPM $WFC $BAC $V $MA $PYPL $AXP $BRK.B $AAPL $NFLX $HD $LOW $PG $PM $MO $KO $PEP $XOM $CVX $JNJ $PFE $MRK $ABBV $AMGN $GILD $BIIB $BA $UTX $LMT $GD $RTN $CAT $GE $DE $NKE $GM  $TSLA $LYFT $SNAP $AMD $NFLX $DIS `;
+  const relevantTradingSymbols = [...new Set(s.replace(/\$/g, '').split(' '))]
+    .sort((a, z) => (a <= z ? -1 : 1))
+    .filter(a => a.length > 0);
 
   const plotData = data
     .filter(
@@ -125,7 +66,7 @@ $(document).ready(function () {
     );
   });
 
-  //build the plot
+  //build the grid
   const tickerGroupedData = plotData.reduce((t, c) => {
     let e = t.find(n => n.TradingSymbol === c.TradingSymbol);
     if (!e) {

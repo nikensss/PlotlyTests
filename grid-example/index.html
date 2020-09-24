@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta
       name="viewport"
-      content="width=device-width, initial-scale=1.0"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
     >
     <title>FinTen Available Data</title>
     <script
@@ -31,64 +31,7 @@
   </head>
 
   <body>
-    <!-- <div
-      id="plot"
-      style="width:100%px;height:950px;"
-    ></div> -->
     <div class="grid"></div>
-    <script>
-      //console.log(data);
-      //const plot = document.getElementById('plot');
-
-      // const plotData = data
-      //   .filter(d => parseInt(d.DocumentFiscalYearFocus) <= 2020 && parseInt(d.DocumentFiscalYearFocus) >= 1987)
-      //   .sort((a, z) => a.TradingSymbol.toLowerCase() <= z.TradingSymbol.toLowerCase() ? -1 : 1)
-      //   .reduce((t, c) => {
-      //     t.x.push(c.TradingSymbol);
-      //     t.y.push(c.DocumentFiscalYearFocus);
-      //     return t;
-      //   }, { x: [], y: [] });
-
-      // Plotly.newPlot(plot, [
-      //   {
-      //     y: plotData.y,
-      //     x: plotData.x,
-      //     mode: 'markers',
-      //     type: 'scatter'
-      //   }
-      // ], {
-      //   margin: { t: 0 }
-      // });
-      // const relevantTradingSymbols = ['AAPL', 'MSFT', 'TSLA'];
-      // const plotData = data
-      //   .filter(d => relevantTradingSymbols.includes(d.TradingSymbol) && parseInt(d.DocumentFiscalYearFocus) <= 2020 && parseInt(d.DocumentFiscalYearFocus) >= 1987)
-      //   .sort((a, z) => a.TradingSymbol.toLowerCase() <= z.TradingSymbol.toLowerCase() ? -1 : 1)
-      //   .reduce((t, c) => {
-      //     let e = t.find(e => e.x === c.TradingSymbol);
-      //     if (!e) {
-      //       e = {
-      //         x: c.TradingSymbol,
-      //         get y() {
-      //           return [...this.data].sort((a, z) => a - z)
-      //         },
-      //         data: new Set(),
-      //         mode: 'lines+markers',
-      //         type: 'scatter'
-      //       }
-      //       t.push(e);
-      //     }
-      //     e.data.add(parseInt(c.DocumentFiscalYearFocus));
-      //     return t;
-      //   }, []);
-
-      // console.log(plotData);
-
-      // Plotly.newPlot(plot, plotData, {
-      //   margin: { t: 0 }
-      // });
-
-
-    </script>
   </body>
 
 </html>
